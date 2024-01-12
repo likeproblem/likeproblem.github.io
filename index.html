@@ -26,7 +26,11 @@
     
     <i>P.S. Some websites are blocked</i>
 
-    <script scr="login.js"></script>
+    <script>
+      if (document.cookie !== "GoodPassword123") {
+        window.location.href = "/login.html";
+      }
+    </script>
   </body>
 </html>
 
