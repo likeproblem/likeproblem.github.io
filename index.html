@@ -24,9 +24,17 @@
     
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScSV1r03_wv4CocIE8uX_nk5vamreWr-V4ev69j41aXe7DzMg/viewform?usp=sf_link" target="_blank">Suggest stuff</a> <br> <br>
     
-    <i>P.S. Some websites are blocked</i>
+    <i>P.S. Some websites are blocked</i> <br> <br>
+
+    <input type="button" id="panik">Panik Button</input>
 
     <script src="login.js"></script>
+    <script>
+      document.getElementById("panik").addEventListener("click", function() {
+        document.cookie = "0";
+        window.location.refresh();
+      });
+    </script>
   </body>
 </html>
 
