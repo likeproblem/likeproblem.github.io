@@ -17,7 +17,6 @@
       
         if (passwordValue === "GoodPassword123") {
           document.cookie = "GoodPassword123";
-      
           window.location.href = "/index.html";
         } else {
           alert("Incorrect password. Please try again.");
@@ -27,6 +26,10 @@
       document.getElementById("loginForm").addEventListener("submit", function() {
         checkPasswordAndRedirect();
       });
+      
+      if (document.cookie === "GoodPassword123") {
+        window.location.href = "/index.html";
+      }
     </script>
   </body>
 </html>
