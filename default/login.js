@@ -11,7 +11,7 @@ function hash(string) {
 
 async function lame() {
   var value = await hash(document.cookie);
-  if (value != "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
+  if (value !== "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
    	window.location.replace("../");
   }
 }
