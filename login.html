@@ -38,11 +38,15 @@
       document.getElementById("loginForm").addEventListener("submit", function() {
         checkPasswordAndRedirect();
       });
-
-      var valu = await hash(document.cookie);
-      if (valu === "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
-        window.location.replace("./default/");
+      
+      async function lemme() {
+        var valu = await hash(document.cookie);
+        if (valu === "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
+          window.location.replace("./default/");
+        }
       }
+      
+      lemme();
     </script>
   </body>
 </html>
