@@ -10,6 +10,9 @@ function hash(string) {
   });
 }
 
-if (hash(document.cookie) !== hash(hash("test"))) {
- 	window.location.href = "/";
-}
+hash(document.cookie).then((value) => {
+  if (value !== "7b3d979ca8330a94fa7e9e1b466d8b99e0bcdea1ec90596c0dcc8d7ef6b4300c") {
+   	window.location.relocate("/");
+  }
+});
+
