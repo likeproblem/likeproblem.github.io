@@ -4,5 +4,5 @@ function sha256(str) {
 }
 
 if (sha256(document.cookie) !== sha256(sha256("test"))) {
- 	window.location.href = "/index.html";
+ 	window.location.href = "/";
 }
