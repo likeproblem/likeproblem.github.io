@@ -15,3 +15,5 @@ async function lame() {
    	window.location.replace("../");
   }
 }
+
+lame();
