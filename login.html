@@ -23,6 +23,7 @@ function sha256(str) {
       
         if (sha256(sha256(passwordValue)) === sha256(sha256("test"))) {
           document.cookie = sha256(passwordValue);
+          window.location.href = "/default/index.html";
         } else {
           alert("Incorrect password. Please try again.");
         }
