@@ -12,10 +12,10 @@
     </form>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
     <script>
-function sha256(str) {
-  const hash = CryptoJS.SHA256(str);
-  return hash.toString(CryptoJS.enc.Hex);
-}
+      function sha256(str) {
+        const hash = CryptoJS.SHA256(str);
+        return hash.toString(CryptoJS.enc.Hex);
+      }
 
       function checkPasswordAndRedirect() {
         var passwordInput = document.getElementById("password");
@@ -23,7 +23,7 @@ function sha256(str) {
       
         if (sha256(sha256(passwordValue)) === sha256(sha256("test"))) {
           document.cookie = sha256(passwordValue);
-          window.location.href = "/default/index.html";
+          window.location.href = "/default/";
         } else {
           alert("Incorrect password. Please try again.");
         }
@@ -34,7 +34,7 @@ function sha256(str) {
       });
 
       if (sha256(document.cookie) === sha256(sha256("test"))) {
-        window.location.href = "/default/index.html";
+        window.location.href = "/default/";
       }
     </script>
   </body>
