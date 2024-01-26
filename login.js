@@ -1,6 +1,6 @@
 function sha256(str) {
-	hashPwd = crypto.createHash('sha256').update(str).digest('hex');
-	return hashPwd;
+  const hash = CryptoJS.SHA256(str);
+  return hash.toString(CryptoJS.enc.Hex);
 }
 
 if (sha256(document.cookie) !== sha256(sha256("test"))) {
