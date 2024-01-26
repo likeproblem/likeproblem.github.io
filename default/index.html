@@ -32,12 +32,12 @@
     
     <i>P.S. Some websites are blocked</i> <br> <br>
     
-    <form>
-      <button type="button" id="panik">Panik Button</button>
+    <form id="panik">
+      <button type="submit">Panik Button</button>
     </form>
 
     <script>
-      document.getElementById("panik").addEventListener("click", function() {
+      document.getElementById("panik").addEventListener("submit", function() {
         document.cookie = "0";
         window.location.relocate("/");
       });
