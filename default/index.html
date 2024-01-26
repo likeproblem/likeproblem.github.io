@@ -32,15 +32,13 @@
     
     <i>P.S. Some websites are blocked</i> <br> <br>
     
-    <form id="panik">
-      <button type="submit">Panik Button</button>
-    </form>
+    <button onclick="ClickMe()">Panik Button</button>
 
     <script>
-      document.getElementById("panik").addEventListener("submit", function() {
+      function ClickMe() {
         document.cookie = "I will cook you";
         window.location.replace("../");
-      });
+      }
     </script>
   </body>
 </html>
