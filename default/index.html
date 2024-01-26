@@ -36,7 +36,7 @@
 
     <script>
       function ClickMe() {
-        document.cookie = "blabla";
+        hash("hello").then((value) => {document.cookie = value});
         window.location.replace("../");
       }
     </script>
