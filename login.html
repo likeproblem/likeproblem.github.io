@@ -26,22 +26,26 @@ function hash(string) {
       function checkPasswordAndRedirect() {
         var passwordInput = document.getElementById("password");
         var passwordValue = passwordInput.value;
-      
-        if (hash(hash(passwordValue)) === hash(hash("test"))) {
-          document.cookie = hash(passwordValue);
-          window.location.href = "/default/";
-        } else {
-          alert("Incorrect password. Please try again.");
-        }
+
+        hash(passwordValue).then((a) => {hash(a).then((value) => {
+          if (value === "7b3d979ca8330a94fa7e9e1b466d8b99e0bcdea1ec90596c0dcc8d7ef6b4300c") {
+            hash(passwordValue).then((cook) => {document.cookie = cook;});
+            window.location.relocate("/default/");
+          } else {
+            alert("Incorrect password. Please try again.");
+          }
+        });});
       }
       
       document.getElementById("loginForm").addEventListener("submit", function() {
         checkPasswordAndRedirect();
       });
 
-      if (hash(document.cookie) === hash(hash("test"))) {
-        window.location.href = "/default/";
-      }
+      hash(document.cookie).then((value) => {
+        if (value === "7b3d979ca8330a94fa7e9e1b466d8b99e0bcdea1ec90596c0dcc8d7ef6b4300c") {
+          window.location.relocate("/default/");
+        }
+      });
     </script>
   </body>
 </html>
