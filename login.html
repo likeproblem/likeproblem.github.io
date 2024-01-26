@@ -10,19 +10,25 @@
       <input type="password" id="password">
       <button type="submit">Submit</button>
     </form>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/sha256.js"></script>
     <script>
-      function sha256(str) {
-        const hash = CryptoJS.SHA256(str);
-        return hash.toString(CryptoJS.enc.Hex);
-      }
+      
+function hash(string) {
+  const utf8 = new TextEncoder().encode(string);
+  return crypto.subtle.digest('SHA-256', utf8).then((hashBuffer) => {
+    const hashArray = Array.from(new Uint8Array(hashBuffer));
+    const hashHex = hashArray
+      .map((bytes) => bytes.toString(16).padStart(2, '0'))
+      .join('');
+    return hashHex;
+  });
+}
 
       function checkPasswordAndRedirect() {
         var passwordInput = document.getElementById("password");
         var passwordValue = passwordInput.value;
       
-        if (sha256(sha256(passwordValue)) === sha256(sha256("test"))) {
-          document.cookie = sha256(passwordValue);
+        if (hash(hash(passwordValue)) === hash(hash("test"))) {
+          document.cookie = hash(passwordValue);
           window.location.href = "/default/";
         } else {
           alert("Incorrect password. Please try again.");
@@ -33,7 +39,7 @@
         checkPasswordAndRedirect();
       });
 
-      if (sha256(document.cookie) === sha256(sha256("test"))) {
+      if (hash(document.cookie) === hash(hash("test"))) {
         window.location.href = "/default/";
       }
     </script>
