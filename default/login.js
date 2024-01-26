@@ -10,7 +10,7 @@ function hash(string) {
 }
 
 hash(document.cookie).then((value) => {
-  if (value !== "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
+  if (value != "adf6824e82a89af6667815e1653b74553e3a25884b6fc81bd0ae4cec76deed9c") {
    	window.location.replace("../");
   }
 });
