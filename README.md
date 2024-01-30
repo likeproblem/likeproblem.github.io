@@ -1,5 +1,5 @@
 # Mercedes++
 
-squash here
+<!--squash here--!>
 
-*squish
+
